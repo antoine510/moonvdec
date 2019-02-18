@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;h;cpp</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Moonlight">
+      <UniqueIdentifier>{caf4afeb-ba5a-4351-b8c1-582d469e0f40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NvCodec">
+      <UniqueIdentifier>{186d539e-3594-460d-a748-6e09b758e7c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Moonlight\reedsolomon">
+      <UniqueIdentifier>{ceb0c12e-4a04-4bbc-8c35-85ed0d82b5e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Moonlight\session">
+      <UniqueIdentifier>{70cee189-015d-4ef3-974b-d4238101b120}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Moonlight\common-c">
+      <UniqueIdentifier>{51788dbf-251a-40a2-a5a9-82dd12a92086}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NvDecoder\NvDecoder.cpp">
+      <Filter>NvCodec</Filter>
+    </ClCompile>
+    <ClCompile Include="moonlight\reedsolomon\rs.c">
+      <Filter>Moonlight\reedsolomon</Filter>
+    </ClCompile>
+    <ClCompile Include="moonlight\session\identitymanager.cpp">
+      <Filter>Moonlight\session</Filter>
+    </ClCompile>
+    <ClCompile Include="moonlight\session\nvcomputer.cpp">
+      <Filter>Moonlight\session</Filter>
+    </ClCompile>
+    <ClCompile Include="moonlight\session\nvhttp.cpp">
+      <Filter>Moonlight\session</Filter>
+    </ClCompile>
+    <ClCompile Include="moonlight\session\nvpairingmanager.cpp">
+      <Filter>Moonlight\session</Filter>
+    </ClCompile>
+    <ClCompile Include="moonlight\common-c\AudioStream.c">
+      <Filter>Moonlight\common-c</Filter>
+    </ClCompile>
+    <ClCompile Include="moonlight\common-c\ByteBuffer.c">
+      <Filter>Moonlight\common-c</Filter>
+    </ClCompile>
+    <ClCompile Include="moonlight\common-c\Connection.c">
+      <Filter>Moonlight\common-c</Filter>
+    </ClCompile>
+    <ClCompile Include="moonlight\common-c\ControlStream.c">
+      <Filter>Moonlight\common-c</Filter>
+    </ClCompile>
+    <ClCompile Include="moonlight\common-c\FakeCallbacks.c">
+      <Filter>Moonlight\common-c</Filter>
+    </ClCompile>
+    <ClCompile Include="moonlight\common-c\InputStream.c">
+      <Filter>Moonlight\common-c</Filter>
+    </ClCompile>
+    <ClCompile Include="moonlight\common-c\LinkedBlockingQueue.c">
+      <Filter>Moonlight\common-c</Filter>
+    </ClCompile>
+    <ClCompile Include="moonlight\common-c\Misc.c">
+      <Filter>Moonlight\common-c</Filter>
+    </ClCompile>
+    <ClCompile Include="moonlight\common-c\Platform.c">
+      <Filter>Moonlight\common-c</Filter>
+    </ClCompile>
+    <ClCompile Include="moonlight\common-c\PlatformSockets.c">
+      <Filter>Moonlight\common-c</Filter>
+    </ClCompile>
+    <ClCompile Include="moonlight\common-c\RtpFecQueue.c">
+      <Filter>Moonlight\common-c</Filter>
+    </ClCompile>
+    <ClCompile Include="moonlight\common-c\RtpReorderQueue.c">
+      <Filter>Moonlight\common-c</Filter>
+    </ClCompile>
+    <ClCompile Include="moonlight\common-c\RtspConnection.c">
+      <Filter>Moonlight\common-c</Filter>
+    </ClCompile>
+    <ClCompile Include="moonlight\common-c\RtspParser.c">
+      <Filter>Moonlight\common-c</Filter>
+    </ClCompile>
+    <ClCompile Include="moonlight\common-c\SdpGenerator.c">
+      <Filter>Moonlight\common-c</Filter>
+    </ClCompile>
+    <ClCompile Include="moonlight\common-c\SimpleStun.c">
+      <Filter>Moonlight\common-c</Filter>
+    </ClCompile>
+    <ClCompile Include="moonlight\common-c\VideoDepacketizer.c">
+      <Filter>Moonlight\common-c</Filter>
+    </ClCompile>
+    <ClCompile Include="moonlight\common-c\VideoStream.c">
+      <Filter>Moonlight\common-c</Filter>
+    </ClCompile>
+    <ClCompile Include="QtHandle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="moonvdec.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="NvDecoder\NvDecoder.h">
+      <Filter>NvCodec</Filter>
+    </ClInclude>
+    <ClInclude Include="NvDecoder\cuviddec.h">
+      <Filter>NvCodec</Filter>
+    </ClInclude>
+    <ClInclude Include="NvDecoder\nvcuvid.h">
+      <Filter>NvCodec</Filter>
+    </ClInclude>
+    <ClInclude Include="moonlight\reedsolomon\rs.h">
+      <Filter>Moonlight\reedsolomon</Filter>
+    </ClInclude>
+    <ClInclude Include="moonlight\session\identitymanager.h">
+      <Filter>Moonlight\session</Filter>
+    </ClInclude>
+    <ClInclude Include="moonlight\session\nvcomputer.h">
+      <Filter>Moonlight\session</Filter>
+    </ClInclude>
+    <ClInclude Include="moonlight\session\nvhttp.h">
+      <Filter>Moonlight\session</Filter>
+    </ClInclude>
+    <ClInclude Include="moonlight\session\nvpairingmanager.h">
+      <Filter>Moonlight\session</Filter>
+    </ClInclude>
+    <ClInclude Include="moonlight\session\utils.h">
+      <Filter>Moonlight\session</Filter>
+    </ClInclude>
+    <ClInclude Include="moonlight\common-c\ByteBuffer.h">
+      <Filter>Moonlight\common-c</Filter>
+    </ClInclude>
+    <ClInclude Include="moonlight\common-c\Input.h">
+      <Filter>Moonlight\common-c</Filter>
+    </ClInclude>
+    <ClInclude Include="moonlight\common-c\Limelight.h">
+      <Filter>Moonlight\common-c</Filter>
+    </ClInclude>
+    <ClInclude Include="moonlight\common-c\Limelight-internal.h">
+      <Filter>Moonlight\common-c</Filter>
+    </ClInclude>
+    <ClInclude Include="moonlight\common-c\LinkedBlockingQueue.h">
+      <Filter>Moonlight\common-c</Filter>
+    </ClInclude>
+    <ClInclude Include="moonlight\common-c\Platform.h">
+      <Filter>Moonlight\common-c</Filter>
+    </ClInclude>
+    <ClInclude Include="moonlight\common-c\PlatformSockets.h">
+      <Filter>Moonlight\common-c</Filter>
+    </ClInclude>
+    <ClInclude Include="moonlight\common-c\PlatformThreads.h">
+      <Filter>Moonlight\common-c</Filter>
+    </ClInclude>
+    <ClInclude Include="moonlight\common-c\RtpFecQueue.h">
+      <Filter>Moonlight\common-c</Filter>
+    </ClInclude>
+    <ClInclude Include="moonlight\common-c\RtpReorderQueue.h">
+      <Filter>Moonlight\common-c</Filter>
+    </ClInclude>
+    <ClInclude Include="moonlight\common-c\Rtsp.h">
+      <Filter>Moonlight\common-c</Filter>
+    </ClInclude>
+    <ClInclude Include="moonlight\common-c\Video.h">
+      <Filter>Moonlight\common-c</Filter>
+    </ClInclude>
+    <ClInclude Include="moonvdec.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="QtHandle.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+</Project>

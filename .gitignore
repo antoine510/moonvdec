@@ -1,0 +1,14 @@
+.vs/
+x64/
+Debug/
+Release/
+
+# Compilation output
+*.o
+*.a
+*.lib
+*.obj
+*.so
+*.dylib
+*.dll
+

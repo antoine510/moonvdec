@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DebugExec|x64">
+      <Configuration>DebugExec</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9CE3DB3C-0535-4085-8E61-30F47979BD8C}</ProjectGuid>
+    <Keyword>Qt4VSv1.0</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugExec|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">
+    <QtMsBuild>$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugExec|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugExec|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>D:\dev\demo\moonvdec\OpenSSL\include;D:\dev\demo\moonvdec\NvCodec\include;D:\dev\demo\moonvdec\Qt\include;D:\dev\demo\moonvdec\enet\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\include;D:\dev\demo\moonvdec\moonvdec\moonlight\common-c;D:\dev\demo\moonvdec\moonvdec\moonlight\reedsolomon;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <LibraryPath>D:\dev\demo\moonvdec\OpenSSL\lib;D:\dev\demo\moonvdec\NvCodec\lib;D:\dev\demo\moonvdec\Qt\lib;D:\dev\demo\moonvdec\enet\lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\lib\x64;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugExec|x64'">
+    <IncludePath>D:\dev\demo\moonvdec\OpenSSL\include;D:\dev\demo\moonvdec\NvCodec\include;D:\dev\demo\moonvdec\Qt\include;D:\dev\demo\moonvdec\enet\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\include;D:\dev\demo\moonvdec\moonvdec\moonlight\common-c;D:\dev\demo\moonvdec\moonvdec\moonlight\reedsolomon;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <LibraryPath>D:\dev\demo\moonvdec\OpenSSL\lib;D:\dev\demo\moonvdec\NvCodec\lib;D:\dev\demo\moonvdec\Qt\lib;D:\dev\demo\moonvdec\enet\lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\lib\x64;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>D:\dev\demo\moonvdec\moonvdec;D:\dev\demo\moonvdec\OpenSSL\include;D:\dev\demo\moonvdec\NvCodec\include;D:\dev\demo\moonvdec\Qt\include;D:\dev\demo\moonvdec\enet\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\include;D:\dev\demo\moonvdec\moonvdec\moonlight\common-c;D:\dev\demo\moonvdec\moonvdec\moonlight\reedsolomon;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
+    <LibraryPath>D:\dev\demo\moonvdec\OpenSSL\lib;D:\dev\demo\moonvdec\NvCodec\lib;D:\dev\demo\moonvdec\Qt\lib;D:\dev\demo\moonvdec\enet\lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\lib\x64;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_NETWORK_LIB;_CRT_SECURE_NO_WARNINGS;_MBCS;MOONVDEC_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4005</DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Qt5Cored.lib;Qt5Networkd.lib;ws2_32.lib;cuda.lib;nvcuvid.lib;d3d11.lib;libcrypto.lib;enetd.lib;Winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <QtMoc>
+      <QTDIR>$(QTDIR)</QTDIR>
+      <InputFile>%(FullPath)</InputFile>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <IncludePath>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtNetwork</IncludePath>
+      <Define>UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_NETWORK_LIB;_CRT_SECURE_NO_WARNINGS;_MBCS;MOONVDEC_EXPORT;%(PreprocessorDefinitions)</Define>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <DynamicSource>output</DynamicSource>
+    </QtMoc>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugExec|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_NETWORK_LIB;_CRT_SECURE_NO_WARNINGS;_MBCS;MOONVDEC_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4005</DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Qt5Cored.lib;Qt5Networkd.lib;ws2_32.lib;cuda.lib;nvcuvid.lib;d3d11.lib;libcrypto.lib;enetd.lib;Winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <QtMoc>
+      <QTDIR>$(QTDIR)</QTDIR>
+      <InputFile>%(FullPath)</InputFile>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <IncludePath>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtNetwork</IncludePath>
+      <Define>UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_NETWORK_LIB;_CRT_SECURE_NO_WARNINGS;_MBCS;MOONVDEC_EXPORT;%(PreprocessorDefinitions)</Define>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <DynamicSource>output</DynamicSource>
+    </QtMoc>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_NETWORK_LIB;_CRT_SECURE_NO_WARNINGS;_MBCS;MOONVDEC_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4005</DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>Qt5Core.lib;Qt5Network.lib;ws2_32.lib;cuda.lib;nvcuvid.lib;d3d11.lib;libcrypto.lib;enet.lib;Winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <QtMoc>
+      <QTDIR>$(QTDIR)</QTDIR>
+      <InputFile>%(FullPath)</InputFile>
+      <OutputFile>.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</OutputFile>
+      <IncludePath>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName)\.;$(QTDIR)\include\QtCore;$(QTDIR)\include\QtNetwork</IncludePath>
+      <Define>UNICODE;_UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_NETWORK_LIB;_CRT_SECURE_NO_WARNINGS;_MBCS;MOONVDEC_EXPORT;%(PreprocessorDefinitions)</Define>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <DynamicSource>output</DynamicSource>
+    </QtMoc>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="moonlight\common-c\AudioStream.c" />
+    <ClCompile Include="moonlight\common-c\ByteBuffer.c" />
+    <ClCompile Include="moonlight\common-c\Connection.c" />
+    <ClCompile Include="moonlight\common-c\ControlStream.c" />
+    <ClCompile Include="moonlight\common-c\FakeCallbacks.c" />
+    <ClCompile Include="moonlight\common-c\InputStream.c" />
+    <ClCompile Include="moonlight\common-c\LinkedBlockingQueue.c" />
+    <ClCompile Include="moonlight\common-c\Misc.c" />
+    <ClCompile Include="moonlight\common-c\Platform.c" />
+    <ClCompile Include="moonlight\common-c\PlatformSockets.c" />
+    <ClCompile Include="moonlight\common-c\RtpFecQueue.c" />
+    <ClCompile Include="moonlight\common-c\RtpReorderQueue.c" />
+    <ClCompile Include="moonlight\common-c\RtspConnection.c" />
+    <ClCompile Include="moonlight\common-c\RtspParser.c" />
+    <ClCompile Include="moonlight\common-c\SdpGenerator.c" />
+    <ClCompile Include="moonlight\common-c\SimpleStun.c" />
+    <ClCompile Include="moonlight\common-c\VideoDepacketizer.c" />
+    <ClCompile Include="moonlight\common-c\VideoStream.c" />
+    <ClCompile Include="moonlight\reedsolomon\rs.c" />
+    <ClCompile Include="moonlight\session\identitymanager.cpp" />
+    <ClCompile Include="moonlight\session\nvcomputer.cpp" />
+    <ClCompile Include="moonlight\session\nvhttp.cpp" />
+    <ClCompile Include="moonlight\session\nvpairingmanager.cpp" />
+    <ClCompile Include="moonvdec.cpp" />
+    <ClCompile Include="NvDecoder\NvDecoder.cpp" />
+    <ClCompile Include="QtHandle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="QtHandle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="moonlight\common-c\ByteBuffer.h" />
+    <ClInclude Include="moonlight\common-c\Input.h" />
+    <ClInclude Include="moonlight\common-c\Limelight-internal.h" />
+    <ClInclude Include="moonlight\common-c\Limelight.h" />
+    <ClInclude Include="moonlight\common-c\LinkedBlockingQueue.h" />
+    <ClInclude Include="moonlight\common-c\Platform.h" />
+    <ClInclude Include="moonlight\common-c\PlatformSockets.h" />
+    <ClInclude Include="moonlight\common-c\PlatformThreads.h" />
+    <ClInclude Include="moonlight\common-c\RtpFecQueue.h" />
+    <ClInclude Include="moonlight\common-c\RtpReorderQueue.h" />
+    <ClInclude Include="moonlight\common-c\Rtsp.h" />
+    <ClInclude Include="moonlight\common-c\Video.h" />
+    <ClInclude Include="moonlight\reedsolomon\rs.h" />
+    <ClInclude Include="moonlight\session\identitymanager.h" />
+    <ClInclude Include="moonlight\session\nvcomputer.h" />
+    <ClInclude Include="moonlight\session\nvhttp.h" />
+    <ClInclude Include="moonlight\session\nvpairingmanager.h" />
+    <ClInclude Include="moonlight\session\utils.h" />
+    <ClInclude Include="moonvdec.h" />
+    <ClInclude Include="NvDecoder\cuviddec.h" />
+    <ClInclude Include="NvDecoder\nvcuvid.h" />
+    <ClInclude Include="NvDecoder\NvDecoder.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" lupdateOptions="" lupdateOnBuild="0" lreleaseOptions="" Qt5Version_x0020_x64="5.11.2" MocOptions="" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
