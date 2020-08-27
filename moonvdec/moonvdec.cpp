@@ -186,12 +186,13 @@ int mvd_GetAppList(mvd_StreamSource src, const int** ids, const wchar_t* const**
 	}
 }
 
-void mvd_LaunchApp(mvd_StreamSource src, int appID, PSTREAM_CONFIGURATION sconfig) {
+void mvd_LaunchApp(mvd_StreamSource src, int appID, mvd_StreamConfiguration* sconfig) {
+	static_assert(sizeof(mvd_StreamConfiguration) == sizeof(STREAM_CONFIGURATION));
 	try {
 		auto sourceComputer = (NvComputer*)src;
 		NvHTTP http(sourceComputer->activeAddress);
 
-		http.launchApp(appID, sconfig, true);
+		http.launchApp(appID, reinterpret_cast<PSTREAM_CONFIGURATION>(sconfig), true);
 	} catch(const GfeHttpResponseException& e) {
 		quickLog("HttpResponseException on launch app: ", e.what());
 	} catch(const QtNetworkReplyException& e) {
@@ -237,8 +238,9 @@ int handleDecodeUnit(PDECODE_UNIT du, void* context) {
 	return DR_OK;
 }
 
-int mvd_StartStream(mvd_StreamSource src, PSTREAM_CONFIGURATION sconfig,
+int mvd_StartStream(mvd_StreamSource src, mvd_StreamConfiguration* sconfig,
 					mvd_CFrameCallback outFramesCB, void* outFramesContext) {
+	static_assert(sizeof(mvd_StreamConfiguration) == sizeof(STREAM_CONFIGURATION));
 	auto sourceComputer = (NvComputer*)src;
 	auto& sourceCtx = contexts.at(sourceComputer);
 
@@ -278,7 +280,7 @@ int mvd_StartStream(mvd_StreamSource src, PSTREAM_CONFIGURATION sconfig,
 	drconfig.submitDecodeUnit = handleDecodeUnit;
 	drconfig.capabilities |= CAPABILITY_SLICES_PER_FRAME(std::min(4u, std::thread::hardware_concurrency()));
 
-	return LiStartConnection(sourceCtx.limelightCtx, &servinfo, sconfig, &conconfig, &drconfig, nullptr, nullptr, 0, nullptr, 0, &sourceCtx);
+	return LiStartConnection(sourceCtx.limelightCtx, &servinfo, reinterpret_cast<PSTREAM_CONFIGURATION>(sconfig), &conconfig, &drconfig, nullptr, nullptr, 0, nullptr, 0, &sourceCtx);
 }
 
 void mvd_StopStream(mvd_StreamSource src) {

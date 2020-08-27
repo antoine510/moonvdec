@@ -1,4 +1,5 @@
 #include "moonvdec.h"
+#include "Limelight.h"
 #include <iostream>
 #include <string>
 #include <string_view>
@@ -22,7 +23,7 @@ int main() {
 		std::wcout << std::to_wstring(i) << L". " << std::wstring_view(names[i], lens[i]) << std::endl;
 	}
 
-	STREAM_CONFIGURATION sconfig = {0};
+	mvd_StreamConfiguration sconfig = {0};
 	sconfig.width = 1280;
 	sconfig.height = 720;
 	sconfig.fps = 30;
